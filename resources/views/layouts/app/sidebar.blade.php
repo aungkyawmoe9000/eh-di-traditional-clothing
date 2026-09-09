@@ -16,19 +16,30 @@
                         {{ __('Dashboard') }}
                     </flux:sidebar.item>
                 </flux:sidebar.group>
+
+                <flux:sidebar.group :heading="__('Inventory')" class="grid">
+                    <flux:sidebar.item icon="layout-grid" :href="route('admin.categories')" :current="request()->routeIs('admin.categories')" wire:navigate>
+                        {{ __('Categories') }}
+                    </flux:sidebar.item>
+                    <flux:sidebar.item icon="shopping-bag" :href="route('admin.products')" :current="request()->routeIs('admin.products')" wire:navigate>
+                        {{ __('Products') }}
+                    </flux:sidebar.item>
+                    <flux:sidebar.item icon="arrow-down-tray" :href="route('admin.purchases')" :current="request()->routeIs('admin.purchases')" wire:navigate>
+                        {{ __('Purchases (Stock In)') }}
+                    </flux:sidebar.item>
+                </flux:sidebar.group>
+
+                <flux:sidebar.group :heading="__('Sales')" class="grid">
+                    <flux:sidebar.item icon="credit-card" :href="route('admin.pos')" :current="request()->routeIs('admin.pos')" wire:navigate>
+                        {{ __('POS Terminal') }}
+                    </flux:sidebar.item>
+                    <flux:sidebar.item icon="document-text" :href="route('admin.reports.daily')" :current="request()->routeIs('admin.reports.daily')" wire:navigate>
+                        {{ __('Daily Reports (EOD)') }}
+                    </flux:sidebar.item>
+                </flux:sidebar.group>
             </flux:sidebar.nav>
 
             <flux:spacer />
-
-            <flux:sidebar.nav>
-                <flux:sidebar.item icon="folder-git-2" href="https://github.com/laravel/livewire-starter-kit" target="_blank">
-                    {{ __('Repository') }}
-                </flux:sidebar.item>
-
-                <flux:sidebar.item icon="book-open-text" href="https://laravel.com/docs/starter-kits#livewire" target="_blank">
-                    {{ __('Documentation') }}
-                </flux:sidebar.item>
-            </flux:sidebar.nav>
 
             <x-desktop-user-menu class="hidden lg:block" :name="auth()->user()->name" />
         </flux:sidebar>

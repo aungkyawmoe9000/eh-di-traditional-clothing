@@ -31,4 +31,20 @@ yarn-error.log
 .cline/
 boost.json
 
+# Laravel TALL Stack
+/storage/app/livewire-tmp
+
+#SQLite journal files
+/database/*.sqlite
+/database/*.sqlite-journal
+
+# Testing
+/.pest
+
+# Environment files
+.env.local
+.env.testing
+.env.*.local
+Thumbs.db
+
 
