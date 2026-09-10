@@ -131,7 +131,7 @@
             <!-- Variant Search Section -->
             <div class="border-t border-neutral-200 dark:border-neutral-800 pt-6">
                 <label class="block text-sm font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Add Products to Purchase</label>
-                
+
                 <div class="relative mb-4">
                     <span class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-neutral-400">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -157,7 +157,7 @@
                                             {{ $variant->product->name }}
                                         </div>
                                         <div class="text-xs text-neutral-500 dark:text-neutral-400">
-                                            SKU: <span class="font-mono font-bold">{{ $variant->sku }}</span> 
+                                            SKU: <span class="font-mono font-bold">{{ $variant->sku }}</span>
                                             @if($variant->color) | Color: {{ $variant->color }} @endif
                                             @if($variant->size) | Size: {{ $variant->size }} @endif
                                         </div>
@@ -245,7 +245,7 @@
                         variant="primary"
                         wire:click="savePurchase"
                         class="cursor-pointer"
-                        @if(empty($items)) disabled @endif
+                        :disable="empty($items)"
                     >
                         Save Purchase
                     </flux:button>
