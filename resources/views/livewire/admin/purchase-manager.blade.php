@@ -245,7 +245,6 @@
                         variant="primary"
                         wire:click="savePurchase"
                         class="cursor-pointer"
-                        :disable="empty($items)"
                     >
                         Save Purchase
                     </flux:button>

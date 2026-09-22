@@ -24,6 +24,9 @@
                     <flux:sidebar.item icon="shopping-bag" :href="route('admin.products')" :current="request()->routeIs('admin.products')" wire:navigate>
                         {{ __('Products') }}
                     </flux:sidebar.item>
+                    <flux:sidebar.item icon="truck" :href="route('admin.suppliers')" :current="request()->routeIs('admin.suppliers')" wire:navigate>
+                        {{ __('Suppliers') }}
+                    </flux:sidebar.item>
                     <flux:sidebar.item icon="arrow-down-tray" :href="route('admin.purchases')" :current="request()->routeIs('admin.purchases')" wire:navigate>
                         {{ __('Purchases (Stock In)') }}
                     </flux:sidebar.item>
